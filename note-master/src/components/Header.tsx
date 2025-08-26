@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { shadow } from "@/styles/utils";
 
 function Header() {
     return (
-        <header relative flex h-24 w-full items-center justify-between bg-popover px-3 sm:px-8>
-            <Link href="/">
+        <header relative flex h-24 w-full items-center justify-between bg-popover px-3 sm:px-8
+        style={{ boxShadow: shadow }}
+        >
+            <Link className="flex items-end gap-2" href="/">
                 <Image 
                 src="/NoteMaster-logo.png" 
                 height={60} 
@@ -13,6 +16,9 @@ function Header() {
                 className="rounded-full" 
                 priority
                 />
+                <h1 className="flex flex-col pb-1 text-2xl font-semibold loading-6">
+                    <span>NoteMaster</span>
+                </h1>
             </Link>
         </header>
     );

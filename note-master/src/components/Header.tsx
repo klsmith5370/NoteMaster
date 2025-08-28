@@ -3,6 +3,8 @@ import Link from "next/link";
 import { shadow } from "@/styles/utils";
 
 function Header() {
+    const user = null;
+
     return (
         <header relative flex h-24 w-full items-center justify-between bg-popover px-3 sm:px-8
         style={{ boxShadow: shadow }}
@@ -20,6 +22,15 @@ function Header() {
                     <span>NoteMaster</span>
                 </h1>
             </Link>
+
+            <div className="flex gap-4">
+                {user ? (
+                    "Logout"
+                ) : (
+                    <></>
+                ) 
+                }
+            </div>
         </header>
     );
 };

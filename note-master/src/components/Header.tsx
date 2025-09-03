@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { shadow } from "@/styles/utils";
+// import { Button } from "./ui/sonner";
 
 function Header() {
     const user = null;
@@ -27,7 +28,9 @@ function Header() {
                 {user ? (
                     "Logout"
                 ) : (
-                    <></>
+                    <button>
+                        <Link href="/login">Login</Link>
+                    </button>
                 ) 
                 }
             </div>

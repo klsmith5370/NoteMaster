@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { shadow } from "@/styles/utils";
-// import { Button } from "./ui/sonner";
+import { Button } from "@/components/ui/button"
 
 function Header() {
     const user = null;
 
     return (
-        <header relative flex h-24 w-full items-center justify-between bg-popover px-3 sm:px-8
+        <header className="relative flex h-24 w-full items-center justify-between bg-popover px-3 sm:px-8"
         style={{ boxShadow: shadow }}
         >
             <Link className="flex items-end gap-2" href="/">
@@ -28,9 +28,15 @@ function Header() {
                 {user ? (
                     "Logout"
                 ) : (
-                    <button>
-                        <Link href="/login">Login</Link>
-                    </button>
+                    <>
+                        <Button asChild className="hidden sm:block">
+                            <Link href="/login">Login</Link>
+                        </Button>
+
+                        <Button asChild variant="outline">
+                            <Link href="/sign-up">Sign Up</Link>
+                        </Button>
+                    </>
                 ) 
                 }
             </div>

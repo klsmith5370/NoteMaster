@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { shadow } from "@/styles/utils";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
+import DarkModeToggle from "./DarkModeToggle";
+
 
 function Header() {
     const user = null;
@@ -37,8 +39,8 @@ function Header() {
                             <Link href="/sign-up">Sign Up</Link>
                         </Button>
                     </>
-                ) 
-                }
+                )}
+                <DarkModeToggle />
             </div>
         </header>
     );

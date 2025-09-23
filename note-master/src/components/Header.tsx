@@ -3,6 +3,7 @@ import Link from "next/link";
 import { shadow } from "@/styles/utils";
 import { Button } from "@/components/ui/button";
 import DarkModeToggle from "./DarkModeToggle";
+import LogoutButton from "./LogoutButton";
 
 
 function Header() {
@@ -28,7 +29,7 @@ function Header() {
 
             <div className="flex gap-4">
                 {user ? (
-                    "Logout"
+                    <LogoutButton />
                 ) : (
                     <>
                         <Button asChild className="hidden sm:block">

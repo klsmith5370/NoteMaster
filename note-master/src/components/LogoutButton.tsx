@@ -7,12 +7,27 @@ import { useState } from "react";
 function LogoutButton() {
     const [loading, setLoading] = useState(false);
 
-    const handleLogOut = () => {
+    const handleLogOut = async () => {
+        setLoading(true);
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+
+        const errorMessage = null;
+
+        if (!errorMessage) {
+            
+        }
+
+        setLoading(false);
         console.log("Logging out...");
     };
 
     return (
-        <Button className="w-24" variant="outline" onClick={handleLogOut}>
+        <Button 
+        className="w-24" 
+        variant="outline" 
+        onClick={handleLogOut}
+        disabled={loading}
+        >
             {loading ? <Loader2 className="animate-spin" /> : "Logout"}
         </Button>
     );

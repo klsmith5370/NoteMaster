@@ -3,6 +3,7 @@
 import { Loader2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { toast } from "sonner";
 
 function LogoutButton() {
     const [loading, setLoading] = useState(false);
@@ -14,7 +15,11 @@ function LogoutButton() {
         const errorMessage = null;
 
         if (!errorMessage) {
-            
+            toast.success("Logged out", {
+                description: "You've been logged out",
+                variant: "success",
+
+            })
         }
 
         setLoading(false);

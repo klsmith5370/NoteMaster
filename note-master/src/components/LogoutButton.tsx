@@ -14,7 +14,7 @@ function LogoutButton() {
         setLoading(true);
         await new Promise((resolve) => setTimeout(resolve, 2000));
 
-        const errorMessage = null;
+        const errorMessage = null; 
 
         if (!errorMessage) {
             toast.success("Logged out", {
@@ -23,11 +23,11 @@ function LogoutButton() {
 
             });
             router.push("/");
-        } else (
-            toast.message({
+        } else {
+            toast.error("Error logging out", {
                 description: errorMessage,
             })
-        )
+        }
 
         setLoading(false);
         console.log("Logging out...");
@@ -40,7 +40,7 @@ function LogoutButton() {
         onClick={handleLogOut}
         disabled={loading}
         >
-            {loading ? <Loader2 className="animate-spin" /> : "Logout"}
+            Logout {loading ? <Loader2 className="animate-spin" /> : "Logout"}
         </Button>
     );
 }

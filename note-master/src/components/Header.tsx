@@ -30,6 +30,7 @@ function Header() {
             <div className="flex gap-4">
                 {user ? (
                     <LogoutButton />
+                   
                 ) : (
                     <>
                         <Button asChild className="hidden sm:block">

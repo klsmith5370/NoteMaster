@@ -40,7 +40,7 @@ function LogoutButton() {
         onClick={handleLogOut}
         disabled={loading}
         >
-            Logout {loading ? <Loader2 className="animate-spin" /> : "Logout"}
+            {loading ? <Loader2 className="animate-spin" /> : "Logout"}
         </Button>
     );
 }

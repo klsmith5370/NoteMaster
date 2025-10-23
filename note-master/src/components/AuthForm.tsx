@@ -1,6 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation";
+import { CardContent } from "./ui/card";
 
 type Props = {
     type: "login" | "signUp";
@@ -11,7 +12,17 @@ function AuthForm({type}: Props) {
     const router = useRouter();
     // const { toast } = useToast();
 
-    return <div></div>
+    const handleSubmit = (FormData: FormData) => {
+        console.log("form submitted")
+    }
+
+    return <form action={handleSubmit}>
+        <CardContent>
+            <div>
+                
+            </div>
+        </CardContent>
+    </form>
 }
 
 export default AuthForm;

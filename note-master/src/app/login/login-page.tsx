@@ -1,3 +1,4 @@
+import AuthForm from "@/components/AuthForm";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 
 

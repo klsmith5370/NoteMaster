@@ -2,6 +2,9 @@
 
 import { useRouter } from "next/navigation";
 import { CardContent } from "./ui/card";
+import { Label } from "./ui/label";
+import { Input } from "./ui/input";
+import { useTransition } from "react";
 
 type Props = {
     type: "login" | "signUp";
@@ -12,6 +15,8 @@ function AuthForm({type}: Props) {
     const router = useRouter();
     // const { toast } = useToast();
 
+    const [isPending, startTransaction] = useTransition()
+
     const handleSubmit = (FormData: FormData) => {
         console.log("form submitted")
     }
@@ -19,7 +24,15 @@ function AuthForm({type}: Props) {
     return <form action={handleSubmit}>
         <CardContent>
             <div>
-                
+                <Label htmlFor="email">Email</Label>
+                <Input 
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                type="email"
+                required
+                disabled={isPending}
+                />
             </div>
         </CardContent>
     </form>

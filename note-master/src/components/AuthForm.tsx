@@ -6,6 +6,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { useTransition } from "react";
 import { Button } from "./ui/button";
+import { Loader2 } from "lucide-react";
 
 type Props = {
     type: "login" | "signUp";
@@ -49,8 +50,19 @@ function AuthForm({type}: Props) {
                 />
             </div>
         </CardContent>
-        <CardFooter>
-            <Button></Button>
+        <CardFooter className="mt-4 flex flex-col gap-6">
+            <Button className="w-full">
+                {isPending ? (
+                    <Loader2 className="animate-spin" />) 
+                    : isLoginForm ? (
+                        "Login"
+                    ) : (
+                        "SignUp"
+                    )}
+            </Button>
+            <p className="text-xs">
+                {isLoginForm ? "Don't have an account yet?" : "Already have an account"}{" "}
+            </p>
         </CardFooter>
     </form>
 }
